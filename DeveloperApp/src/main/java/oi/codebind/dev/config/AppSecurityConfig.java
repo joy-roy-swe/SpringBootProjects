@@ -38,16 +38,10 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 		.csrf().disable()
 		.authorizeRequests()
 		.antMatchers("/userhome/**").authenticated()
-//		.anyRequest().authenticated().hasRole("USER")
 		.and()
 		.formLogin()
 			.loginPage("/login")
-			//.loginProcessingUrl("/login")
 			.permitAll();
-//		.and()
-//		.logout().invalidateHttpSession(true)
-//		.clearAuthentication(true)
-//		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-//		.logoutSuccessUrl("/logout-success").permitAll();
+
 	}
 }
